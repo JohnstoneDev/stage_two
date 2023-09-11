@@ -15,7 +15,7 @@ end
 get '/api' do
 	slack_name = params[:slack_name]
 	track = params[:track]
-	weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friray', 'Saturday']
+	weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 	day = Time.new.wday
 
