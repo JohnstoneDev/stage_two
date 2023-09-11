@@ -6,6 +6,7 @@ before do
 	content_type :json
 end
 
+
 get '/' do
 	return { message: 'Hello world!'}.to_json
 end
@@ -14,10 +15,13 @@ end
 get '/api' do
 	slack_name = params[:slack_name]
 	track = params[:track]
+	weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friray', 'Saturday']
 
-	current_day = 'Monday'
+	day = Time.new.wday
+
+	current_day = weekdays[day]
 	utc_time = Time.now.utc
-	github_file_url = 'https://github.com/JohnstoneDev/stage_two/app.rb'
+	github_file_url = 'https://github.com/JohnstoneDev/stage_two/blob/main/app.rb'
 	github_repo_url = 'https://github.com/JohnstoneDev/stage_two'
 
 	if slack_name && track
