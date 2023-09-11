@@ -25,7 +25,7 @@ get '/api' do
 	day = Time.new.wday
 
 	current_day = weekdays[day]
-	utc_time = Time.now.utc
+	utc_time = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
 	github_file_url = 'https://github.com/JohnstoneDev/stage_two/blob/main/app.rb'
 	github_repo_url = 'https://github.com/JohnstoneDev/stage_two'
 
