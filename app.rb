@@ -2,6 +2,11 @@ require 'sinatra'
 require 'json'
 require 'time'
 
+port = ENV['PORT'] || 9292
+
+set :bind, '0.0.0.0'
+set :port, port
+
 before do
 	content_type :json
 end
